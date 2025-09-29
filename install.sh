@@ -30,7 +30,9 @@ mkdir windows
 cd windows
 wget -O Tiny10.iso https://archive.org/download/lite-edition-ltsb-2015-x86/Windows%2010%20Enterprise%20LTSB%202015%20-%20Lite%20%28x86%29.iso
 qemu-img create -f raw windows.img 13G
-qemu-system-x86_64 -m 16G   -smp 4               -cpu max  -accel tcg,thread=multi -cdrom Tiny10.iso -hda windows.img -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1
+playit &
+qemu-system-x86_64 -m 16G   -smp 4               -cpu max  -accel tcg,thread=multi -cdrom Tiny10.iso -hda windows.img -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1 &> /dev/null
+
 cd
 rm -rf .bashrc
 exit
@@ -43,7 +45,8 @@ echo "Windows is Booting"
 cd /opt/windows
 rm -rf Tiny10.iso
 pkill qemu
-qemu-system-x86_64 -m 16G   -smp 4               -cpu max  -accel tcg,thread=multi -hda windows.img -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1  &
-playit
+playit &
+qemu-system-x86_64 -m 16G   -smp 4               -cpu max  -accel tcg,thread=multi -hda windows.img -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1  &> /dev/null
+
 
 EOF
