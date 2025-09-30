@@ -52,5 +52,5 @@ echo "Windows is Booting"
 cd /opt/windows
 pkill qemu
 playit &
-qemu-system-x86_64 -m 16G -smp 4 -cpu max -accel tcg,thread=multi -hda windows.img -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1  &> /dev/null
+qemu-system-x86_64 -m 16G -smp 4 -cpu max -accel tcg,thread=multi -hda windows.img -cdrom Tiny10.iso -device e1000,netdev=net0 -netdev user,id=net0  -vnc :1  &> /dev/null
 EOF
