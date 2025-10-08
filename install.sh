@@ -23,7 +23,7 @@ echo "ubuntu:ubuntu" | chpasswd
 echo "ubuntu  ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ubuntu
 clear
 echo "Ubuntu defalut password is ubuntu"
-sudo apt install xfce4 gnome-terminal systemctl dropbear openjdk-8-jre openjdk-17-jre tigervnc-standalone-server --no-install-recommends --no-install-suggests -y
+sudo apt install xfce4 gnome-terminal systemctl dropbear openjdk-8-jre openjdk-17-jre tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer dbus-x11  --no-install-recommends --no-install-suggests -y
 echo "Download playit"
 echo "root:ubuntu" | sudo chpasswd
 wget https://github.com/playit-cloud/playit-agent/releases/download/v0.16.2/playit-linux-amd64 -O /bin/playit
