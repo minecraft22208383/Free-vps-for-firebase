@@ -31,7 +31,6 @@ chmod +x /bin/playit
 rm -rf /home/ubuntu/.bashrc
 echo "export PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin" >> /home/ubuntu/.bashrc
 cp /home/ubuntu/.bashrc /root
-rm -rf .bashrc
 exit
 EOF
 cd ..
