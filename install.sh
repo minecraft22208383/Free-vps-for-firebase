@@ -28,6 +28,9 @@ echo "Download playit"
 echo "root:ubuntu" | sudo chpasswd
 wget https://github.com/playit-cloud/playit-agent/releases/download/v0.16.2/playit-linux-amd64 -O /bin/playit
 chmod +x /bin/playit
+rm -rf /etc/skel/.bashrc
+echo "export PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin" >> /etc/skel/.bashrc
+cp /etc/skel/.bashrc /root
 rm -rf .bashrc
 exit
 EOF
