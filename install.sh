@@ -35,7 +35,7 @@ cd ..
 cd usr/bin
 cat >> "ustart" << EOF
 echo "[*] Start Dropbear"
-dropbear -p 2222
+dropbear -p 2222 -l
 echo "Note: The root password is ubuntu. and ubuntu user password is ubuntu"
 sleep 19
 echo "[*] Start Playit"
