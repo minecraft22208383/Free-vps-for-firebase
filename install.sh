@@ -23,7 +23,7 @@ echo "ubuntu:ubuntu" | chpasswd
 echo "ubuntu  ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/ubuntu
 clear
 echo "Ubuntu defalut password is ubuntu"
-sudo apt install nano curl systemctl dropbear openjdk-8-jre openjdk-17-jre  dbus-x11 --no-install-recommends --no-install-suggests -y
+sudo apt install nano curl systemctl dropbear openjdk-8-jre openjdk-17-jre  dbus-x11 xfce4 xfce4-terminal firefox  tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer tigervnc-common  -y
 echo "Download playit"
 echo "root:ubuntu" | sudo chpasswd
 wget https://github.com/playit-cloud/playit-agent/releases/download/v0.16.2/playit-linux-amd64 -O /bin/playit
@@ -40,6 +40,8 @@ echo "[*] Start Dropbear"
 dropbear -p 2222 
 echo "Note: The root password is ubuntu. and ubuntu user password is ubuntu"
 sleep 19
+echo "[*] Start Vncserver"
+vncserver -xstartup startxfce4 -localhost no
 echo "[*] Start Playit"
 playit
 EOF
